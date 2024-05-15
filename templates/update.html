@@ -41,4 +41,8 @@
     </div>
 </form>
 <hr>
+
+<form action="{{ url_for('delete', id=film['filmID']) }}" method="POST">
+    <input type="submit" value="Delete film" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this film?')">
+</form>
 {% endblock %}
