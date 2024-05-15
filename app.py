@@ -1,3 +1,4 @@
+import pathlib
 from flask import Flask, render_template, request, url_for, flash, redirect
 import sqlite3
 from werkzeug.exceptions import abort
@@ -6,9 +7,13 @@ from werkzeug.exceptions import abort
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'decidedtotryflaskapp'
 
-#connecting to database
+
 def get_db_connection():
-   conn = sqlite3.connect(r"C:\Users\madin\Desktop\JustIT Bootcamp\PythonProject\FilmFlix\filmflix.db")
+   """Connect to database."""
+   db_file_path = pathlib.Path(__file__).parent.resolve()
+   db_file = f"{db_file_path}\\filmflix.db"
+   print(f"{db_file=}")
+   conn = sqlite3.connect(db_file)
    conn.row_factory = sqlite3.Row
    return conn
 
