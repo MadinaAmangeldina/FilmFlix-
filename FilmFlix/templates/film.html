@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ film['title'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ film['yearReleased'] }}</span>
+    <!-- <p>{{ film['yearReleased'] }}</p> -->
+    <p>Rating: {{ film['rating'] }}</p>
+    <p>Duration: {{ film['duration'] }}</p>
+    <p>Genre: {{ film['genre'] }}</p>
+{% endblock %}

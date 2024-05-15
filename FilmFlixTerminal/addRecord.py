@@ -11,19 +11,17 @@ def insertFilm():
   duration = input("Enter film duration: ")
   genre = input("Enter Genre: ")
 
-  #append data to the list "songs"
+  #append data to the list "films"
   films.append(title)
   films.append(yearReleased)
   films.append(rating)
   films.append(duration)
   films.append(genre)
-  # print(songs)
-  # songs = songs + [title, artist, genre]
-  # print(songs)
+ 
 
   try:
     cursor.execute(" INSERT INTO tblFilms (title, yearReleased, rating, duration, genre) VALUES(?,?,?,?,?)", films)
-    conn.commit() # .commit() makes the change permenent
+    conn.commit() # .commit() makes the change permanent
     print(f"{title} added to the films table")
 
   except sql.OperationalError as e:

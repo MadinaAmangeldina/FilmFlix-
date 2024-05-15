@@ -1,7 +1,7 @@
 import sqlite3 as sql
 
 try:
-  with sql.connect("PythonProject/FilmFlix/filmflix.db") as conn:
+  with sql.connect("C:/Users/madin/Desktop/JustIT Bootcamp/PythonProject/FilmFlixTerminal/filmflix.db") as conn:
     cursor = conn.cursor()
 
 except sql.OperationalError as e:

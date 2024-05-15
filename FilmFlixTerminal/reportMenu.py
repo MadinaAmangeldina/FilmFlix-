@@ -6,7 +6,7 @@ from menu import *
 def reportOptions():
   options = 0
   while options not in ["1", "2", "3", "4", "5", "6"]:
-    with open("PythonProject\FilmFlix\dbReportMenu.txt", "r") as menu:
+    with open("C:/Users/madin/Desktop/JustIT Bootcamp/PythonProject/FilmFlixTerminal/dbReportMenu.txt", "r") as menu:
       choices = menu.readlines()
     for line in choices:
       print(line, end="")

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Update "{{ film['title'] }}" {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" placeholder="Update title"
+               class="form-control"
+               value="{{ request.form['title'] or film['title'] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="yearReleased">Release year</label>
+        <input name="yearReleased" placeholder="Update release year"
+                  class="form-control" value="{{ request.form['yearReleased'] or film['yearReleased'] }}"></input>
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input name="rating" placeholder="Update rating(R/PG/G)"
+                class="form-control" value="{{ request.form['rating'] or film['rating'] }}"></input>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Duration</label>
+      <input name="duration" placeholder="Update duration"
+              class="form-control" value="{{ request.form['duration'] or film['duration'] }}"></input>
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input name="genre" placeholder="Update genre"
+            class="form-control" value="{{ request.form['genre'] or film['genre'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+<hr>
+{% endblock %}

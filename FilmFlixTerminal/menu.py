@@ -8,7 +8,7 @@ from reportMenu import *
 def menuOptions():
   options = 0
   while options not in ["1", "2", "3", "4", "5", "6"]:
-    with open("PythonProject/FilmFlix/dbMenu.txt", "r") as menu:
+    with open("C:/Users/madin/Desktop/JustIT Bootcamp/PythonProject/FilmFlixTerminal/dbMenu.txt", "r") as menu:
       choices = menu.readlines()
     for line in choices:
       print(line, end="")

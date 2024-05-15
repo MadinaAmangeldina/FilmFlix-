@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>{% block title %} Welcome to FilmFlix {% endblock %}</h1>
+    {% for film in films %}
+      <a href="{{ url_for('film', film_id=film['filmID']) }}">
+        <h2>{{ film['title'] }}</h2>
+      </a>
+      <span class="badge badge-primary">{{ film['genre'] }} </span>
+      <span class="badge badge-primary">{{ film['yearReleased'] }} </span>
+      <a href="{{ url_for('update', id=film['filmID']) }}">
+        <span class="badge badge-warning">Update</span>
+      </a>
+      <hr>
+    {% endfor %}
+{% endblock %}
