@@ -10,10 +10,9 @@ app.config['SECRET_KEY'] = 'decidedtotryflaskapp'
 
 def get_db_connection():
    """Connect to database."""
-   db_file_path = pathlib.Path(__file__).parent.resolve()
-   db_file = f"{db_file_path}\\filmflix.db"
-   print(f"{db_file=}")
-   conn = sqlite3.connect(db_file)
+   db_file_path = pathlib.Path(__file__).parent.resolve() / "filmflix.db"
+   print(f"{db_file_path=}")
+   conn = sqlite3.connect(db_file_path)
    conn.row_factory = sqlite3.Row
    return conn
 
